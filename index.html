@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unspoof this 💩</title>
+    <style>
+        body {
+            height:100vh;
+            margin:0;
+            padding:2rem;
+            box-sizing:border-box;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+        }
+    </style>
+</head>
+
+<script>
+    const chars = {
+        "А": "A",
+        "В": "B",
+        "С": "C",
+        "D": "D",
+        "Е": "E",
+        "F": "F",
+        "G": "G",
+        "Н": "H",
+        "І": "I",
+        "J": "J",
+        "Κ": "K",
+        "L": "L",
+        "М": "M",
+        "Ν": "N",
+        "О": "O",
+        "Р": "P",
+        "Q": "Q",
+        "R": "R",
+        "Ѕ": "S",
+        "Т": "T",
+        "U": "U",
+        "V": "V",
+        "W": "W",
+        "Х": "X",
+        "Υ": "Y",
+        "Ζ": "Z",
+        "а": "a",
+        "b": "b",
+        "с": "c",
+        "d": "d",
+        "е": "e",
+        "f": "f",
+        "g": "g",
+        "h": "h",
+        "і": "i",
+        "ј": "j",
+        "k": "k",
+        "l": "l",
+        "m": "m",
+        "n": "n",
+        "о": "o",
+        "р": "p",
+        "q": "q",
+        "r": "r",
+        "ѕ": "s",
+        "t": "t",
+        "u": "u",
+        "v": "v",
+        "w": "w",
+        "х": "x",
+        "у": "y",
+        "z": "z",
+    }
+
+    function unspoof(text) {
+        let copy = Array.from(text)
+        for (let i = 0; i < copy.length; i++) {
+            const c = copy[i]
+            if (chars.hasOwnProperty(c)) {
+                copy[i] = chars[c]
+            }
+        }
+        return copy.join()
+    }
+    
+    async function unspoofClipboard() {
+        const s = await navigator.clipboard.readText()
+        const u = unspoof(s)
+        navigator.clipboard.writeText(u)
+    }
+</script>
+
+<body>
+    <button onclick="unspoofClipboard()" style="font-size:2rem;padding:1rem;">unspoof this 💩</button>
+</body>
+</html>
