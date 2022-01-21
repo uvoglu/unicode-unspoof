@@ -6,4 +6,4 @@ This replaces almost equally looking characters from non-latin alphabets (e.g. C
 
 For example the unicode character `a` (`U+0430`) looks like a normal `a` (`U+0061`), but in fact it isn't.
 
-The initial use-case of this tool was to revert spoofed unicode strings in online programming exams.
+The initial use-case of this tool was to revert spoofed unicode strings in online programming exams on moodle.
